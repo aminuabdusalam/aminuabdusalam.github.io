@@ -81,15 +81,15 @@ src/
 
 1. ✅ **Foundation** - Design tokens, BaseLayout, Nav, Footer, global styles
 2. ✅ **Home page** - Hero, featured projects preview, latest posts preview
-3. ✅ **About page** - Bio + career timeline
-4. ✅ **Content collections** - Schemas for `projects/` and `writing/` (Astro v6 loader-based)
-5. ✅ **Projects page** - Grid of all projects
-6. ✅ **Writing pages** - Blog list + post template, seed 1 sample post
+3. ✅ **About page** - Bio + career timeline + honors + hobbies (Fisk-only, corrected)
+4. ✅ **Content collections** - Schemas for `projects/` and `writing/` (Astro v6 loader-based, projects have `type: work|personal`)
+5. ✅ **Projects page** - Split into "Selected work" (large cards, accent border) + "Personal projects" (compact grid)
+6. ✅ **Writing pages** - Blog list + post template + 2 real posts (hello-world, september-2020)
 7. ✅ **404 page** - Playful terminal-style page
-8. ✅ **GH Actions deploy** - `.github/workflows/deploy.yml`
-9. 🚧 **Local git init + personal account config** - IN PROGRESS
-10. ⏳ **Populate content** - Real experience from resume, real projects from GitHub
-11. ⏳ **Later** - Custom domain, OG image generation, RSS feed, analytics
+8. ✅ **GH Actions deploy** - `.github/workflows/deploy.yml` (Node 22 pinned)
+9. ✅ **Local git init + personal account config** - Repo pushed, PAT cached in Windows Credential Manager
+10. ✅ **Populate content** - 1 work project + 5 personal, About with real timeline/honors, 2 real blog posts. Site live at https://aminuabdusalam.github.io
+11. ⏳ **Later** - Custom domain, OG image generation, RSS feed, analytics, more blog posts
 
 ---
 
