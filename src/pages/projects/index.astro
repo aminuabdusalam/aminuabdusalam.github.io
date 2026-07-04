@@ -16,7 +16,7 @@ const personal = all
     <h1>Projects</h1>
     <p class="lead">
       A running list of things I've built — a few flagship ships at work, plus the personal
-      and college projects that got me here.
+      and personal projects that got me here.
     </p>
 
     {work.length > 0 && (
@@ -48,8 +48,8 @@ const personal = all
 
     {personal.length > 0 && (
       <div class="section">
-        <h2>Personal &amp; college</h2>
-        <p class="section-lede">Side projects, hackathons, and course work — mostly from before Microsoft.</p>
+        <h2>Personal projects</h2>
+        <p class="section-lede">Side projects and hackathons, mostly from before Microsoft.</p>
         <ul class="grid personal-grid">
           {personal.map((p) => (
             <li class="card card-small">
