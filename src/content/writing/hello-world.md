@@ -15,7 +15,7 @@ I've spent the last few years shipping commerce products at Xbox and quietly fil
 Expect a mix:
 
 - **Product notes** — what I'm learning from shipping subscription commerce to hundreds of millions of players.
-- **Engineering ramblings** — the ex-engineer in me still cares about how things actually work.
+- **Engineering ramblings** — I still care about how things actually work.
 - **Life stuff** — occasionally.
 
 ## What's on here
