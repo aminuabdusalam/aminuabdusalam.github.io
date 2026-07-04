@@ -1,0 +1,75 @@
+---
+const year = new Date().getFullYear();
+
+const socials = [
+  { href: 'https://github.com/aminuabdusalam', label: 'GitHub' },
+  { href: 'https://www.linkedin.com/in/aminuabdusalam/', label: 'LinkedIn' },
+  { href: 'mailto:aminuabdusalam2019@gmail.com', label: 'Email' },
+];
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="tagline">
+      Built with <a href="https://astro.build" rel="noopener">Astro</a>. Hosted on GitHub Pages.
+    </p>
+    <ul class="socials">
+      {socials.map((s) => (
+        <li>
+          <a href={s.href} rel="noopener" target={s.href.startsWith('http') ? '_blank' : undefined}>
+            {s.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p class="copyright">© {year} Aminu Abdusalam</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-12);
+    padding-block: var(--space-8);
+    color: var(--color-text-muted);
+    font-size: var(--fs-sm);
+  }
+
+  .footer-inner {
+    max-width: var(--container-wide);
+    margin-inline: auto;
+    padding-inline: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    text-align: center;
+  }
+
+  .socials {
+    display: flex;
+    gap: var(--space-5);
+    list-style: none;
+    font-family: var(--font-mono);
+  }
+
+  .socials a {
+    color: var(--color-text-muted);
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .socials a:hover {
+    color: var(--color-accent);
+  }
+
+  .tagline {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+  }
+
+  .copyright {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--color-text-dim);
+  }
+</style>

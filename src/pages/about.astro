@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About — Aminu Abdusalam" description="A bit about me.">
+  <section class="container container-narrow prose">
+    <h1>About</h1>
+    <p class="lead">
+      I'm a Product Manager at Microsoft on the Xbox Consumer Commerce team, an ex-engineer,
+      and a builder who can't stop tinkering.
+    </p>
+
+    <p>
+      I grew up in Nigeria, moved to the U.S. for college at <strong>Fisk University</strong>
+      (Nashville, TN), where I studied Computer Science and helped lead our team through the
+      NFL Battle of the Brains. From there I did a dual-degree program at <strong>Vanderbilt
+      University</strong>, added a second CS degree, and started my career as a software
+      engineer.
+    </p>
+
+    <p>
+      Today I own subscription commerce surfaces at Xbox — things like device warranty
+      subscriptions, Ubisoft Classics inside Game Pass, and the Ask-to-Subscribe experience
+      that lets kids get parental approval before checkout. I've been promoted three times
+      in three years (L59 → L62), which mostly means I've learned to ship things and
+      write clearly.
+    </p>
+
+    <h2>Timeline</h2>
+    <ul class="timeline">
+      <li>
+        <span class="year">2026</span>
+        <div>
+          <strong>Product Manager 2, Microsoft Xbox</strong>
+          <p>Xbox Consumer Commerce — Warranty Subs, Ubisoft Classics, Ask-to-Subscribe.</p>
+        </div>
+      </li>
+      <li>
+        <span class="year">2023</span>
+        <div>
+          <strong>Product Manager, Microsoft Xbox</strong>
+          <p>Started on Consumer Commerce, first shipped experiences for hundreds of millions of gamers.</p>
+        </div>
+      </li>
+      <li>
+        <span class="year">2023</span>
+        <div>
+          <strong>B.E. Computer Science, Vanderbilt University</strong>
+          <p>Dual-degree program with Fisk. Software engineering, systems, and a lot of coffee.</p>
+        </div>
+      </li>
+      <li>
+        <span class="year">2021</span>
+        <div>
+          <strong>B.S. Computer Science, Fisk University</strong>
+          <p>Nashville, TN. NFL Battle of the Brains team. Learned how to build in public.</p>
+        </div>
+      </li>
+    </ul>
+
+    <h2>What I'm into</h2>
+    <ul>
+      <li>Subscription and marketplace commerce (payments, entitlements, tax, fraud)</li>
+      <li>AI agents that actually change how PMs work day-to-day</li>
+      <li>Fantasy football (currently commissioner, currently losing)</li>
+      <li>Writing about the messy in-between of product and engineering</li>
+    </ul>
+
+    <p class="cta-line">
+      <a href="mailto:aminuabdusalam2019@gmail.com">Say hi →</a>
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose {
+    padding-block: var(--space-10) var(--space-8);
+  }
+  .prose h1 {
+    font-size: var(--fs-3xl);
+    margin-bottom: var(--space-5);
+  }
+  .prose h2 {
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-4);
+    font-size: var(--fs-xl);
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+  }
+  .prose h2::before {
+    content: '## ';
+    color: var(--color-text-dim);
+  }
+  .prose p {
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+  .prose .lead {
+    font-size: var(--fs-md);
+    color: var(--color-text-strong);
+  }
+  .prose ul {
+    margin-bottom: var(--space-5);
+    padding-left: var(--space-5);
+    color: var(--color-text);
+  }
+  .prose li {
+    margin-bottom: var(--space-2);
+    line-height: var(--lh-relaxed);
+  }
+  .timeline {
+    list-style: none;
+    padding: 0;
+    border-left: 1px solid var(--color-border-strong);
+    margin-left: var(--space-2);
+  }
+  .timeline li {
+    display: flex;
+    gap: var(--space-5);
+    padding: var(--space-4) 0 var(--space-4) var(--space-5);
+    position: relative;
+  }
+  .timeline li::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: var(--space-6);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 12px var(--color-accent-glow);
+  }
+  .year {
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    color: var(--color-text-dim);
+    min-width: 60px;
+    padding-top: 4px;
+  }
+  .timeline strong {
+    color: var(--color-text-strong);
+    display: block;
+    margin-bottom: var(--space-1);
+  }
+  .timeline p {
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+  .cta-line {
+    margin-top: var(--space-8);
+    font-family: var(--font-mono);
+  }
+</style>

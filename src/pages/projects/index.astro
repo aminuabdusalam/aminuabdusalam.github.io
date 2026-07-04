@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const all = await getCollection('projects');
+const projects = all.sort((a, b) => (a.data.order - b.data.order));
+---
+
+<BaseLayout title="Projects — Aminu Abdusalam" description="Things I've built.">
+  <section class="container prose">
+    <h1>Projects</h1>
+    <p class="lead">A running list of things I've built, shipped, or tinkered on.</p>
+
+    {projects.length === 0 && (
+      <p class="empty">No projects yet. Check back soon.</p>
+    )}
+
+    <ul class="grid">
+      {projects.map((p) => (
+        <li class="card">
+          <div class="card-head">
+            <h3>{p.data.title}</h3>
+            <span class="year">{p.data.year}</span>
+          </div>
+          <p>{p.data.description}</p>
+          {p.data.stack.length > 0 && (
+            <ul class="stack">
+              {p.data.stack.map((s) => <li>{s}</li>)}
+            </ul>
+          )}
+          <div class="links">
+            {p.data.link && <a href={p.data.link} target="_blank" rel="noopener">Live →</a>}
+            {p.data.repo && <a href={p.data.repo} target="_blank" rel="noopener">Code →</a>}
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose {
+    padding-block: var(--space-10) var(--space-8);
+  }
+  h1 {
+    font-size: var(--fs-3xl);
+    margin-bottom: var(--space-3);
+  }
+  .lead {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-8);
+  }
+  .empty {
+    color: var(--color-text-dim);
+    font-family: var(--font-mono);
+  }
+  .grid {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-5);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .card {
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    transition: all var(--duration-base) var(--ease-out);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  .card:hover {
+    border-color: var(--color-accent-dim);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow);
+  }
+  .card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-3);
+  }
+  .card h3 {
+    font-size: var(--fs-lg);
+    color: var(--color-text-strong);
+  }
+  .year {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--color-text-dim);
+  }
+  .card p {
+    color: var(--color-text-muted);
+    font-size: var(--fs-sm);
+    line-height: var(--lh-relaxed);
+    flex-grow: 1;
+  }
+  .stack {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  .stack li {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--color-accent);
+    background: var(--color-accent-glow);
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+  }
+  .links {
+    display: flex;
+    gap: var(--space-4);
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    margin-top: var(--space-2);
+  }
+</style>

@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('writing', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+
+<BaseLayout title="Writing — Aminu Abdusalam" description="Notes, essays, and thoughts.">
+  <section class="container container-narrow prose">
+    <h1>Writing</h1>
+    <p class="lead">
+      Notes on product, engineering, and whatever else has been on my mind. Some polished,
+      some rambling — all mine.
+    </p>
+
+    {posts.length === 0 && (
+      <p class="empty">No posts yet. Working on it.</p>
+    )}
+
+    <ul class="posts">
+      {posts.map((p) => (
+        <li>
+          <a href={`/writing/${p.id}`}>
+            <time datetime={p.data.pubDate.toISOString()}>{fmt(p.data.pubDate)}</time>
+            <h3>{p.data.title}</h3>
+            <p>{p.data.description}</p>
+            {p.data.tags.length > 0 && (
+              <ul class="tags">
+                {p.data.tags.map((t) => <li>#{t}</li>)}
+              </ul>
+            )}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose {
+    padding-block: var(--space-10) var(--space-8);
+  }
+  h1 {
+    font-size: var(--fs-3xl);
+    margin-bottom: var(--space-3);
+  }
+  .lead {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-8);
+    max-width: 60ch;
+  }
+  .empty {
+    color: var(--color-text-dim);
+    font-family: var(--font-mono);
+  }
+  .posts {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .posts a {
+    display: block;
+    padding: var(--space-5);
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    color: inherit;
+    transition: all var(--duration-base) var(--ease-out);
+  }
+  .posts a:hover {
+    border-color: var(--color-border);
+    background: var(--color-bg-elevated);
+    transform: translateX(4px);
+  }
+  time {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--color-text-dim);
+  }
+  .posts h3 {
+    font-size: var(--fs-lg);
+    color: var(--color-text-strong);
+    margin: var(--space-1) 0 var(--space-2);
+    transition: color var(--duration-fast);
+  }
+  .posts a:hover h3 {
+    color: var(--color-accent);
+  }
+  .posts p {
+    color: var(--color-text-muted);
+    font-size: var(--fs-sm);
+    line-height: var(--lh-relaxed);
+  }
+  .tags {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+  }
+  .tags li {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--color-accent);
+  }
+</style>

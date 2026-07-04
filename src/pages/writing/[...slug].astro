@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('writing', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+type Props = { post: CollectionEntry<'writing'> };
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout title={`${post.data.title} — Aminu Abdusalam`} description={post.data.description}>
+  <article class="container container-narrow post">
+    <a href="/writing" class="back">← All writing</a>
+    <header>
+      <h1>{post.data.title}</h1>
+      <div class="meta">
+        <time datetime={post.data.pubDate.toISOString()}>{fmt(post.data.pubDate)}</time>
+        {post.data.updatedDate && (
+          <span>· Updated {fmt(post.data.updatedDate)}</span>
+        )}
+        {post.data.tags.length > 0 && (
+          <span>· {post.data.tags.map((t) => `#${t}`).join(' ')}</span>
+        )}
+      </div>
+    </header>
+    <div class="prose-body">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .post {
+    padding-block: var(--space-8);
+  }
+  .back {
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
+    display: inline-block;
+    margin-bottom: var(--space-8);
+  }
+  .back:hover {
+    color: var(--color-accent);
+  }
+  h1 {
+    font-size: clamp(1.75rem, 5vw, var(--fs-3xl));
+    margin-bottom: var(--space-3);
+    color: var(--color-text-strong);
+  }
+  .meta {
+    color: var(--color-text-dim);
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    margin-bottom: var(--space-8);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  .prose-body {
+    line-height: var(--lh-relaxed);
+    color: var(--color-text);
+  }
+  .prose-body :global(h2) {
+    font-size: var(--fs-xl);
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-4);
+    color: var(--color-text-strong);
+  }
+  .prose-body :global(h3) {
+    font-size: var(--fs-lg);
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-3);
+    color: var(--color-text-strong);
+  }
+  .prose-body :global(p) {
+    margin-bottom: var(--space-5);
+  }
+  .prose-body :global(ul),
+  .prose-body :global(ol) {
+    margin-bottom: var(--space-5);
+    padding-left: var(--space-5);
+  }
+  .prose-body :global(li) {
+    margin-bottom: var(--space-2);
+  }
+  .prose-body :global(blockquote) {
+    border-left: 3px solid var(--color-accent);
+    padding-left: var(--space-4);
+    margin: var(--space-5) 0;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+  .prose-body :global(pre) {
+    background: var(--color-bg-elevated);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    margin-bottom: var(--space-5);
+    border: 1px solid var(--color-border);
+  }
+  .prose-body :global(a) {
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent-dim);
+    text-underline-offset: 3px;
+  }
+</style>

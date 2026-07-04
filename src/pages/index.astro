@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Aminu Abdusalam"
+  description="Product Manager at Microsoft Xbox. Builder. Ex-engineer."
+>
+  <section class="hero container">
+    <p class="greeting">Hey, I'm Aminu <span class="wave" aria-hidden="true">👋</span></p>
+    <h1 class="headline">
+      I build <span class="accent">commerce products</span> at Xbox
+      <span class="cursor" aria-hidden="true">▊</span>
+    </h1>
+    <p class="lede">
+      Product Manager at Microsoft, ex-engineer, and a builder at heart. I ship subscription
+      commerce for hundreds of millions of gamers, and I write about the messy in-between of
+      product, engineering, and life.
+    </p>
+
+    <div class="terminal" role="presentation">
+      <div class="terminal-header">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+        <span class="terminal-title">~/currently</span>
+      </div>
+      <div class="terminal-body">
+        <p><span class="prompt">$</span> whoami</p>
+        <p class="output">Aminu Abdusalam — PM 2, Xbox Consumer Commerce</p>
+        <p><span class="prompt">$</span> cat currently.md</p>
+        <p class="output">Shipping subscription commerce (Warranty Subs, Ubi Classics, A2S).</p>
+        <p class="output">Exploring how AI agents change PM workflows.</p>
+        <p class="output">Fantasy football commissioner. Occasional writer.</p>
+        <p><span class="prompt">$</span> <span class="blink">▊</span></p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a href="/projects" class="btn">See what I've built →</a>
+      <a href="/writing" class="btn btn-secondary">Read the writing</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-block: var(--space-12) var(--space-8);
+  }
+
+  .greeting {
+    font-family: var(--font-mono);
+    color: var(--color-accent);
+    font-size: var(--fs-md);
+    margin-bottom: var(--space-4);
+  }
+
+  .wave {
+    display: inline-block;
+    animation: wave 2.4s ease-in-out infinite;
+    transform-origin: 70% 70%;
+  }
+
+  @keyframes wave {
+    0%, 60%, 100% { transform: rotate(0); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+  }
+
+  .headline {
+    font-size: clamp(2rem, 6vw, var(--fs-4xl));
+    line-height: var(--lh-tight);
+    letter-spacing: -0.03em;
+    color: var(--color-text-strong);
+    max-width: 20ch;
+    margin-bottom: var(--space-5);
+  }
+
+  .accent {
+    color: var(--color-accent);
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .accent::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 3px;
+    background: var(--color-accent);
+    opacity: 0.35;
+    border-radius: 2px;
+  }
+
+  .cursor {
+    color: var(--color-accent);
+    animation: blink 1s steps(2) infinite;
+    margin-left: 4px;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  .lede {
+    font-size: var(--fs-md);
+    color: var(--color-text);
+    max-width: 60ch;
+    margin-bottom: var(--space-8);
+    line-height: var(--lh-relaxed);
+  }
+
+  .terminal {
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    max-width: 640px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--space-8);
+  }
+
+  .terminal-header {
+    background: var(--color-bg-hover);
+    padding: var(--space-2) var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-red { background: #ff5f57; }
+  .dot-yellow { background: #febc2e; }
+  .dot-green { background: #28c840; }
+
+  .terminal-title {
+    margin-left: auto;
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--color-text-dim);
+  }
+
+  .terminal-body {
+    padding: var(--space-4) var(--space-5);
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    line-height: var(--lh-snug);
+  }
+
+  .terminal-body p {
+    margin-block: 4px;
+    line-height: var(--lh-snug);
+  }
+
+  .prompt {
+    color: var(--color-accent);
+    margin-right: 8px;
+  }
+
+  .output {
+    color: var(--color-text-muted);
+    padding-left: 20px;
+  }
+
+  .blink {
+    animation: blink 1s steps(2) infinite;
+    color: var(--color-accent);
+  }
+
+  .cta {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: var(--space-3) var(--space-5);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-sm);
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    transition: all var(--duration-base) var(--ease-out);
+  }
+
+  .btn:hover {
+    background: var(--color-accent-glow);
+    transform: translateY(-2px);
+    color: var(--color-accent-hover);
+  }
+
+  .btn-secondary {
+    border-color: var(--color-border-strong);
+    color: var(--color-text-muted);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-text-muted);
+    color: var(--color-text-strong);
+    background: var(--color-bg-elevated);
+  }
+</style>
