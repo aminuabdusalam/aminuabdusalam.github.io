@@ -20,7 +20,7 @@ The essay is dressed up as being about "transitioning from high school to colleg
 
 At 18, my biggest challenge was that I had a model of how the world worked, and reality was busy handing me counter-examples faster than I could update the model. Every day was a small identity crisis wearing the costume of an ordinary Tuesday.
 
-I'm also a little charmed by how earnest it is. The all-caps `LEARNED`. The rhetorical question about ethnic groups. The way I ended it with a moral instead of just letting the story sit. It reads like someone who had just landed in Nashville with two suitcases and a lot to prove, which... yeah, that was me.
+I'm also a little charmed by how earnest it is. The all-caps `LEARNED`. The rhetorical question about ethnic groups. The way I ended it with a moral instead of just letting the story sit. It reads like someone who had just landed in Nashville with two suitcases (just had to add two suitcases for the plot lol) with his uncle and a lot to prove, which... yeah, that was me.
 
 ## What I'd say now
 
