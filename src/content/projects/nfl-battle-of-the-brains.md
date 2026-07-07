@@ -6,7 +6,7 @@ role: 'Team lead'
 stack: ['Product', 'Research', 'Presenting']
 link: 'https://www.nfl.com/news/nfl-hbcu-battle-of-the-brains-competition-fisk-university'
 featured: true
-order: 4
+order: 5
 type: personal
 ---
 

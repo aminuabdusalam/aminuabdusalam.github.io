@@ -6,7 +6,7 @@ role: 'Team of 5 · Full-stack'
 stack: ['React Native', 'JavaScript', 'Django', 'Python', 'OpenCV', 'Scipy']
 repo: 'https://github.com/aminuabdusalam/TravelBuddy'
 featured: true
-order: 3
+order: 4
 type: personal
 ---
 

@@ -5,7 +5,7 @@ year: 2022
 role: 'Solo build'
 stack: ['Python', 'scikit-learn', 'pandas', 'Jupyter']
 repo: 'https://github.com/aminuabdusalam/Early-Diagnosis-of-Heart-Disease-Model'
-order: 5
+order: 6
 type: personal
 ---
 
