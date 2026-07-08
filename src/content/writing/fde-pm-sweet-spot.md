@@ -4,6 +4,7 @@ description: 'AI-alert. A dump of my current thinking on Forward Deployed Engine
 pubDate: 2026-07-08
 tags: ['career', 'ai', 'pm', 'engineering', 'ai-written']
 featured: true
+unlisted: true
 ---
 
 > **AI alert.** This one's different from what I usually put here. I usually handwrite everything, but the recent waves in the industry got me thinking and I wanted to dump my thoughts fast instead of letting them marinate for weeks. So I asked an AI to help me shape it. I've edited and reshaped the parts that matter, but the connective tissue is AI-written. Reader beware, and take it as a live snapshot of my thinking rather than a polished essay.
