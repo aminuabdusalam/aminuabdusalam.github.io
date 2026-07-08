@@ -27,6 +27,15 @@ const projects = defineCollection({
     featured: z.boolean().default(false),
     order: z.number().default(100),
     type: z.enum(['work', 'personal']).default('personal'),
+    launches: z
+      .array(
+        z.object({
+          year: z.union([z.number(), z.string()]),
+          title: z.string(),
+          url: z.string().url().optional(),
+        })
+      )
+      .default([]),
   }),
 });
 

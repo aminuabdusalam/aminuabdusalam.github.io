@@ -1,6 +1,6 @@
 ---
 title: 'MAKI'
-description: 'AI clinical assistant that scans patient case notes and classifies safety narratives — surfacing symptoms, medications, and treatment history so care teams can act before issues escalate.'
+description: 'AI clinical assistant that scans patient case notes and classifies safety narratives, surfacing symptoms, medications, and treatment history so care teams can act before issues escalate.'
 year: 2023
 role: 'Team hackathon · Full-stack'
 stack: ['Next.js', 'TypeScript', 'Python', 'OpenAI GPT-3', 'spaCy', 'NLP']
