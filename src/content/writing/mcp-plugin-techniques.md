@@ -4,6 +4,7 @@ description: 'A companion doc to my resume. If you saw the MCP plugins bullet an
 pubDate: 2026-07-08
 tags: ['ai', 'engineering', 'mcp']
 featured: false
+unlisted: true
 ---
 
 If you found this from my resume: hi. This is the companion writeup to the MCP-based Copilot CLI plugins bullet. My goal is to be specific about what techniques are actually demonstrated in that work, and equally specific about what is NOT there so I do not over-claim.
