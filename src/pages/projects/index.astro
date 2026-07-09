@@ -53,7 +53,9 @@ const personal = all
         <ul class="grid personal-grid">
           {personal.map((p) => (
             <li class="card card-small">
-              <h3>{p.data.title}</h3>
+              <div class="card-head">
+                <h3>{p.data.title}</h3>
+              </div>
               <p>{p.data.description}</p>
               {p.data.stack.length > 0 && (
                 <ul class="stack">
