@@ -65,6 +65,9 @@ const personal = all
               <div class="links">
                 {p.data.link && <a href={p.data.link} target="_blank" rel="noopener">Live →</a>}
                 {p.data.repo && <a href={p.data.repo} target="_blank" rel="noopener">Code →</a>}
+                {p.data.press.map((m) => (
+                  <a href={m.url} target="_blank" rel="noopener">{m.label} →</a>
+                ))}
               </div>
             </li>
           ))}
