@@ -1,7 +1,7 @@
 ---
 title: 'Dan-Sudoku'
-description: 'A single-player Sudoku game in Python with multiple difficulty levels and a puzzle generator that guarantees a unique solution.'
-year: 2021
+description: 'A single-player Sudoku game in Python with multiple difficulty levels — built for fun as my very first project.'
+year: 2019
 role: 'Solo build'
 stack: ['Python', 'Pygame']
 repo: 'https://github.com/aminuabdusalam/Dan-Sudoku'
@@ -9,4 +9,4 @@ order: 7
 type: personal
 ---
 
-Weekend project that turned into a lesson in constraint propagation. The generator uses backtracking with symmetric hole-punching, then verifies that the puzzle has exactly one solution before it ships you a board.
+I added this one for fun. It was my very first project ever, written from scratch before I had learned object-oriented programming — so it's just plain functions and modules, no classes in sight. Very simple, but I keep it up here as a relic of how I started.
