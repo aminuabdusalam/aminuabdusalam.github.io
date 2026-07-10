@@ -11,11 +11,11 @@ unlisted: true
 
 ## The sweet spot
 
-I've always found myself in the middle of things. Even in life, when I think back to my cultural identity crisis growing up, not Yoruba enough to the Yorubas, not Hausa enough to the Hausas, I've operated in the in-between. And in my career it's the same story: not too PMy, not too devy. Sitting at the intersection of product, engineering, and data. What I've come to realize is that I actually excel in both directions, and my performance speaks to that.
+I've always found myself in the middle of things. Even in life, when I think back to my cultural identity crisis growing up, not Yoruba enough to the Yorubas, not Hausa enough to the Hausas, I've operated in the in-between. and in my career same story.. sitting at the intersection of product, engineering, and data. What I've come to realize is that I actually excel in both directions, and my performance speaks to that.
 
 There's never really been a role title that cleanly captures this. But I've been fortunate that even though my role is officially PM, I've been allowed to operate at that sweet spot anyway. Writing my own KQL. Prototyping data models. Building MCP plugins for my org's Copilot CLI. Jumping into codebases when there's a fire. That's what keeps me sane. Shout out to the managers, devs, and partners who have never made me feel like I was coloring outside the lines. People genuinely didn't have a problem with it, and I'm fortunate.
 
-Now, though, it feels like there's actually a role emerging that names this thing. **Forward Deployed Engineer.**
+Now, though, it feels like there's actually a role emerging that maybe names this thing or some form of it. **Forward Deployed Engineer.**
 
 ## What is an FDE, really?
 
