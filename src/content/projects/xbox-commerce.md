@@ -21,7 +21,7 @@ launches:
     title: 'Xbox Game Pass overhaul (naming + pricing)'
     url: 'https://www.purexbox.com/news/2025/10/xbox-game-pass-is-getting-a-major-overhaul-with-new-names-games-and-price-changes'
   - year: 2025
-    title: 'Xbox mobile app store capabilities'
+    title: 'NEW Xbox mobile store'
     url: 'https://news.xbox.com/en-us/2025/04/16/xbox-april-update-buy-games-xbx-app-stream-your-own-game-console/'
   - year: 2025
     title: 'Ask-a-Parent to buy subscriptions'
