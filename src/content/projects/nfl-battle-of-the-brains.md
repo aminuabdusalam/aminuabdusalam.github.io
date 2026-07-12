@@ -9,7 +9,7 @@ press:
   - label: 'Press feature'
     url: 'https://rollingout.com/2022/03/18/black-intelligence-celebrated-as-nfl-hosts-5th-annual-hbcu-battle-of-the-brains/'
 featured: true
-order: 5
+order: 6
 type: personal
 ---
 

@@ -5,7 +5,7 @@ year: 2019
 role: 'Solo build'
 stack: ['Python', 'Pygame']
 repo: 'https://github.com/aminuabdusalam/Dan-Sudoku'
-order: 7
+order: 8
 type: personal
 ---
 
