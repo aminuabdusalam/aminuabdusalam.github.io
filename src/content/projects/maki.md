@@ -5,6 +5,7 @@ year: 2023
 role: 'Team hackathon · Full-stack'
 stack: ['Next.js', 'TypeScript', 'Python', 'OpenAI GPT-3', 'spaCy', 'NLP']
 repo: 'https://github.com/aminuabdusalam/MAKI'
+image: '/projects/maki.png'
 featured: true
 order: 3
 type: personal

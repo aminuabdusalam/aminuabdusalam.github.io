@@ -6,7 +6,7 @@ role: 'Solo · Design + Build'
 stack: ['Vanilla JS', 'PWA', 'Service Worker', 'localStorage']
 link: 'https://aminuabdusalam.github.io/HomeBuyerAcademy/'
 repo: 'https://github.com/aminuabdusalam/HomeBuyerAcademy'
-featured: true
+featured: false
 order: 4
 type: personal
 ---

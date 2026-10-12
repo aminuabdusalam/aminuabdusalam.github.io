@@ -3,302 +3,504 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const all = await getCollection('projects');
-const work = all
-  .filter((p) => p.data.type === 'work')
-  .sort((a, b) => a.data.order - b.data.order);
+const commerce = all.find((project) => project.id === 'xbox-commerce');
 const personal = all
-  .filter((p) => p.data.type === 'personal')
+  .filter((project) => project.data.type === 'personal')
   .sort((a, b) => a.data.order - b.data.order);
+
+const art: Record<string, { symbol: string; tone: string }> = {
+  'ai-fitness-trainer': { symbol: '◒', tone: 'coral' },
+  maki: { symbol: '✦', tone: 'blue' },
+  'homebuyer-academy': { symbol: '⌂', tone: 'gold' },
+  permcompass: { symbol: '⌁', tone: 'green' },
+  'travel-buddy': { symbol: '✈', tone: 'blue' },
+  'nfl-battle-of-the-brains': { symbol: '★', tone: 'gold' },
+  'heart-disease-ml': { symbol: '♥', tone: 'coral' },
+  'dan-sudoku': { symbol: '9', tone: 'green' },
+};
 ---
 
-<BaseLayout title="Projects — Aminu Abdusalam" description="Things I've built, at work and on the side.">
-  <section class="container prose">
-    <h1>Projects</h1>
-    <p class="lead">
-      A running list of things I've shipped/ et built: a few flagship public launches, plus personal
-      projects.
-    </p>
+<BaseLayout
+  title="Work — Aminu Abdusalam"
+  description="Professional case studies, public launch evidence, and personal products built across commerce, AI, data, and the web."
+>
+  <section class="page-hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Work</p>
+        <h1>Things I helped ship. Things I could not resist building.</h1>
+      </div>
+      <p>
+        Professional work is organized around the problem and my contribution. Public launches
+        keep their source links. Personal projects keep their live demos and repositories.
+      </p>
+    </div>
+  </section>
 
-    {work.length > 0 && (
-      <div class="section">
-        <h2>Selected work</h2>
-        <p class="section-lede">Shipped at Microsoft.</p>
-        <ul class="grid work-grid">
-          {work.map((p) => (
-            <li class="card card-large">
-              <div class="card-head">
-                <h3>{p.data.title}</h3>
-                <span class="year">{p.data.year}</span>
+  <section class="professional">
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">Professional portfolio</p>
+          <h2 class="section-heading">Product judgment with technical receipts.</h2>
+        </div>
+        <p class="section-copy">
+          These stories cover customer-facing launches, applied AI, incident response, and
+          production engineering. Internal details are intentionally kept at a public-safe level.
+        </p>
+      </div>
+
+      <div class="case-grid">
+        <article class="case-card case-wide case-commerce">
+          <div class="case-number">01</div>
+          <div class="case-copy">
+            <p class="case-type">Customer-facing commerce</p>
+            <h3>From subscription architecture to shipped customer journeys</h3>
+            <p>
+              Owned commerce decisions across subscription launches, purchase flows, mobile
+              storefronts, pricing evolution, recurring discounts, and fraud prevention.
+            </p>
+            <ul>
+              <li><strong>Role:</strong> Product architecture, requirements, cross-system decisions, launch execution</li>
+              <li><strong>Scale:</strong> Commerce surfaces serving hundreds of millions to more than a billion unique customers</li>
+              <li><strong>Evidence:</strong> Public launch and support documentation below</li>
+            </ul>
+          </div>
+          <div class="case-mark" aria-hidden="true"><span>↗</span></div>
+        </article>
+
+        <article class="case-card case-ai">
+          <div class="case-number">02</div>
+          <div class="case-copy">
+            <p class="case-type">Applied AI</p>
+            <h3>Natural-language analysis over real commerce data</h3>
+            <p>
+              Built an MCP-based Copilot CLI plugin that routes questions through clarification,
+              schema and domain context, query execution, freshness checks, validation, and
+              result presentation.
+            </p>
+            <ul class="stack">
+              <li>MCP</li><li>Tool calling</li><li>KQL</li><li>Azure Data Explorer</li>
+            </ul>
+            <a href="/writing/mcp-plugin-techniques/">Technical techniques and honesty guardrails →</a>
+          </div>
+        </article>
+
+        <article class="case-card case-response">
+          <div class="case-number">03</div>
+          <div class="case-copy">
+            <p class="case-type">High-stakes remediation</p>
+            <h3>60K+ records when the automated path failed</h3>
+            <p>
+              Developed Python, KQL, and SCOPE scripts against a multi-terabyte data warehouse
+              to process affected customer records during a major subscription launch.
+            </p>
+            <ul class="stack">
+              <li>Python</li><li>KQL</li><li>SCOPE</li><li>Incident response</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="case-card case-platform">
+          <div class="case-number">04</div>
+          <div class="case-copy">
+            <p class="case-type">Production engineering</p>
+            <h3>Better tools for investigators, better pipelines for launches</h3>
+            <p>
+              Shipped features in the internal platform used for commerce incidents and
+              customer investigations, then extended subscription data pipelines supporting a
+              major Game Pass launch.
+            </p>
+            <ul class="stack">
+              <li>C#</li><li>TypeScript</li><li>Angular</li><li>.NET</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      {commerce && commerce.data.launches.length > 0 && (
+        <div class="launch-evidence">
+          <div class="launch-heading">
+            <p class="eyebrow">External evidence</p>
+            <h2>Public launches and references</h2>
+            <p>Links open the announcement, support page, or public coverage.</p>
+          </div>
+          <ol>
+            {commerce.data.launches.map((launch) => (
+              <li>
+                <span>{launch.year}</span>
+                {launch.url ? (
+                  <a href={launch.url} target="_blank" rel="noopener">
+                    {launch.title}<small>public source ↗</small>
+                  </a>
+                ) : (
+                  <div>{launch.title}<small>shipped capability</small></div>
+                )}
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section id="personal-builds" class="personal-builds">
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">Personal portfolio</p>
+          <h2 class="section-heading">Side quests, experiments, and competition wins.</h2>
+        </div>
+        <p class="section-copy">
+          The dates are not the point. The range is: computer vision, NLP, consumer education,
+          product thinking, machine learning, and delightfully overbuilt weekend ideas.
+        </p>
+      </div>
+
+      <div class="build-grid">
+        {personal.map((project) => {
+          const visual = art[project.id] ?? { symbol: '↗', tone: 'green' };
+          return (
+            <article class:list={['build-card', `tone-${visual.tone}`]}>
+              <div class:list={['build-art', { 'has-image': project.data.image }]}>
+                {project.data.image ? (
+                  <img src={project.data.image} alt={`${project.data.title} project`} loading="lazy" />
+                ) : (
+                  <>
+                    <span aria-hidden="true">{visual.symbol}</span>
+                    <small>{project.data.stack.slice(0, 3).join(' · ')}</small>
+                  </>
+                )}
               </div>
-              {p.data.role && <span class="role">{p.data.role}</span>}
-              <p>{p.data.description}</p>
-              {p.data.stack.length > 0 && (
+              <div class="build-copy">
+                <p class="role">{project.data.role}</p>
+                <h3>{project.data.title}</h3>
+                <p>{project.data.description}</p>
                 <ul class="stack">
-                  {p.data.stack.map((s) => <li>{s}</li>)}
+                  {project.data.stack.map((item) => <li>{item}</li>)}
                 </ul>
-              )}
-              {p.data.launches.length > 0 && (
-                <div class="launches">
-                  <h4>Recent launches</h4>
-                  <ul>
-                    {p.data.launches.slice(0, 3).map((l) => (
-                      <li>
-                        <span class="launch-year">{l.year}</span>
-                        {l.url ? (
-                          <a href={l.url} target="_blank" rel="noopener">{l.title}</a>
-                        ) : (
-                          <span class="launch-title">{l.title}</span>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                  {p.data.launches.length > 3 && (
-                    <details class="launches-more">
-                      <summary>Show {p.data.launches.length - 3} more launches</summary>
-                      <ul>
-                        {p.data.launches.slice(3).map((l) => (
-                          <li>
-                            <span class="launch-year">{l.year}</span>
-                            {l.url ? (
-                              <a href={l.url} target="_blank" rel="noopener">{l.title}</a>
-                            ) : (
-                              <span class="launch-title">{l.title}</span>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    </details>
-                  )}
+                <div class="links">
+                  {project.data.link && <a href={project.data.link} target="_blank" rel="noopener">Live experience ↗</a>}
+                  {project.data.repo && <a href={project.data.repo} target="_blank" rel="noopener">Source code ↗</a>}
+                  {project.data.press.map((item) => (
+                    <a href={item.url} target="_blank" rel="noopener">{item.label} ↗</a>
+                  ))}
                 </div>
-              )}
-              <div class="links">
-                {p.data.link && <a href={p.data.link} target="_blank" rel="noopener">Read more →</a>}
               </div>
-            </li>
-          ))}
-        </ul>
+            </article>
+          );
+        })}
       </div>
-    )}
-
-    {personal.length > 0 && (
-      <div class="section">
-        <h2>Personal projects</h2>
-        <p class="section-lede">Side projects and hackathons.. do you want to be the cook or be cooked you choose.</p>
-        <ul class="grid personal-grid">
-          {personal.map((p) => (
-            <li class="card card-small">
-              <div class="card-head">
-                <h3>{p.data.title}</h3>
-              </div>
-              <p>{p.data.description}</p>
-              {p.data.stack.length > 0 && (
-                <ul class="stack">
-                  {p.data.stack.map((s) => <li>{s}</li>)}
-                </ul>
-              )}
-              <div class="links">
-                {p.data.link && <a href={p.data.link} target="_blank" rel="noopener">Live →</a>}
-                {p.data.repo && <a href={p.data.repo} target="_blank" rel="noopener">Code →</a>}
-                {p.data.press.map((m) => (
-                  <a href={m.url} target="_blank" rel="noopener">{m.label} →</a>
-                ))}
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    )}
+    </div>
   </section>
 </BaseLayout>
 
 <style>
-  .prose {
-    padding-block: var(--space-10) var(--space-8);
+  .page-hero {
+    padding-block: var(--space-12) var(--space-10);
   }
-  h1 {
-    font-size: var(--fs-3xl);
-    margin-bottom: var(--space-3);
-  }
-  .lead {
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-10);
-    max-width: 60ch;
-  }
-  .section {
-    margin-bottom: var(--space-12);
-  }
-  .section h2 {
-    font-family: var(--font-mono);
-    color: var(--color-accent);
-    font-size: var(--fs-xl);
-    margin-bottom: var(--space-2);
-  }
-  .section h2::before {
-    content: '## ';
-    color: var(--color-text-dim);
-  }
-  .section-lede {
-    color: var(--color-text-muted);
-    font-size: var(--fs-sm);
-    margin-bottom: var(--space-5);
-  }
-  .grid {
-    list-style: none;
-    padding: 0;
+  .hero-grid {
     display: grid;
-    gap: var(--space-5);
+    grid-template-columns: 1.35fr 0.65fr;
+    gap: var(--space-10);
+    align-items: end;
   }
-  .work-grid {
-    grid-template-columns: 1fr;
+  .page-hero h1 {
+    max-width: 12ch;
+    margin-top: var(--space-4);
+    font-size: clamp(3.2rem, 8vw, 7rem);
+    line-height: 0.96;
   }
-  .personal-grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  .page-hero .hero-grid > p {
+    color: var(--color-text-muted);
+    font-size: var(--fs-md);
   }
-  .card {
-    background: var(--color-bg-elevated);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: var(--space-5);
-    transition: all var(--duration-base) var(--ease-out);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
+  .professional {
+    padding-top: var(--space-5);
   }
-  .card:hover {
-    border-color: var(--color-accent-dim);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-glow);
-  }
-  .card-large {
-    padding: var(--space-6);
-    border-left: 3px solid var(--color-accent);
-  }
-  .card-head {
+  .section-intro {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    gap: var(--space-3);
+    align-items: end;
+    gap: var(--space-8);
   }
-  .card h3 {
+  .case-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+    margin-top: var(--space-8);
+  }
+  .case-card {
+    position: relative;
+    min-height: 430px;
+    padding: clamp(1.75rem, 4vw, 3.5rem);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-lg);
     color: var(--color-text-strong);
   }
-  .card-large h3 {
-    font-size: var(--fs-xl);
+  .case-wide {
+    grid-column: 1 / -1;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) 0.65fr;
+    gap: var(--space-6);
+    align-items: center;
   }
-  .card-small h3 {
-    font-size: var(--fs-lg);
+  .case-commerce { background: var(--color-gold-soft); }
+  .case-ai { background: var(--color-blue-soft); }
+  .case-response { background: #e6ddd7; }
+  .case-platform { background: var(--color-green-soft); grid-column: 1 / -1; min-height: 370px; }
+  .case-number {
+    align-self: flex-start;
+    font-family: var(--font-mono);
+    opacity: 0.55;
   }
-  .year {
+  .case-type {
     font-family: var(--font-mono);
     font-size: var(--fs-xs);
-    color: var(--color-text-dim);
-    white-space: nowrap;
-  }
-  .role {
-    font-family: var(--font-mono);
-    font-size: var(--fs-xs);
-    color: var(--color-accent);
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
   }
-  .card p {
-    color: var(--color-text-muted);
+  .case-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+  .case-copy h3 {
+    max-width: 16ch;
+    margin-block: var(--space-3) var(--space-4);
+    font-family: var(--font-display);
+    font-size: clamp(2.1rem, 5vw, 4.6rem);
+    font-weight: 400;
+    line-height: 0.98;
+  }
+  .case-copy > p:not(.case-type) {
+    max-width: 62ch;
+    color: rgba(20, 33, 29, 0.74);
+  }
+  .case-copy > ul:not(.stack) {
+    display: grid;
+    gap: var(--space-2);
+    list-style: none;
+    margin-top: var(--space-5);
+  }
+  .case-copy > a {
+    margin-top: var(--space-5);
+    font-family: var(--font-mono);
     font-size: var(--fs-sm);
-    line-height: var(--lh-relaxed);
-    flex-grow: 1;
   }
-  .card-large p {
-    color: var(--color-text);
-    font-size: var(--fs-base);
+  .case-mark {
+    width: min(100%, 280px);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    justify-self: center;
+    border: 2px solid rgba(109, 84, 22, 0.25);
+    border-radius: 50%;
+    background: var(--color-gold);
+  }
+  .case-mark span {
+    font-family: var(--font-display);
+    font-size: 8rem;
+    transform: rotate(-18deg);
   }
   .stack {
     list-style: none;
-    padding: 0;
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);
+    margin-top: var(--space-5);
   }
   .stack li {
-    font-family: var(--font-mono);
-    font-size: var(--fs-xs);
-    color: var(--color-accent);
-    background: var(--color-accent-glow);
-    padding: 2px 8px;
+    padding: 0.3rem 0.65rem;
     border-radius: var(--radius-full);
-  }
-  .launches {
-    border-top: 1px solid var(--color-border);
-    padding-top: var(--space-4);
-    margin-top: var(--space-2);
-  }
-  .launches h4 {
+    background: rgba(255, 255, 255, 0.55);
     font-family: var(--font-mono);
     font-size: var(--fs-xs);
-    color: var(--color-text-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin: 0 0 var(--space-3) 0;
   }
-  .launches ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
+  .launch-evidence {
+    display: grid;
+    grid-template-columns: 0.65fr 1.35fr;
+    gap: var(--space-10);
+    margin-top: var(--space-12);
   }
-  .launches li {
-    display: flex;
-    gap: var(--space-3);
-    align-items: baseline;
-    font-size: var(--fs-sm);
-    line-height: var(--lh-normal);
+  .launch-heading {
+    position: sticky;
+    top: 7rem;
+    align-self: start;
   }
-  .launch-year {
-    font-family: var(--font-mono);
-    font-size: var(--fs-xs);
-    color: var(--color-text-dim);
-    min-width: 3.5ch;
-    flex-shrink: 0;
+  .launch-heading h2 {
+    margin-block: var(--space-3);
+    font-size: var(--fs-3xl);
   }
-  .launch-title {
+  .launch-heading > p:last-child {
     color: var(--color-text-muted);
   }
-  .launches-more {
-    margin-top: var(--space-3);
+  .launch-evidence ol {
+    list-style: none;
+    border-top: 1px solid var(--color-border-strong);
   }
-  .launches-more summary {
-    cursor: pointer;
+  .launch-evidence li {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: var(--space-4);
+    padding-block: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .launch-evidence li > span {
+    font-family: var(--font-mono);
+    color: var(--color-text-dim);
+  }
+  .launch-evidence a,
+  .launch-evidence li > div {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-4);
+    color: var(--color-text-strong);
+  }
+  .launch-evidence small {
+    font-family: var(--font-mono);
+    color: var(--color-text-dim);
+    font-size: var(--fs-xs);
+    white-space: nowrap;
+  }
+  .personal-builds {
+    margin-top: var(--space-8);
+    background: var(--color-ink);
+    color: white;
+  }
+  .personal-builds .section-heading,
+  .personal-builds h3 {
+    color: white;
+  }
+  .personal-builds .eyebrow {
+    color: var(--color-green-soft);
+  }
+  .personal-builds .eyebrow::before {
+    background: var(--color-green-soft);
+  }
+  .personal-builds .section-copy {
+    color: #aebbb4;
+  }
+  .build-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+    margin-top: var(--space-8);
+  }
+  .build-card {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background: #16221c;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .build-art {
+    min-height: 260px;
+    padding: var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-ink);
+  }
+  .build-art.has-image {
+    padding: 0;
+    overflow: hidden;
+  }
+  .build-art img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform var(--duration-slow) var(--ease-out);
+  }
+  .build-card:hover .build-art img {
+    transform: scale(1.035);
+  }
+  .build-art span {
+    font-family: var(--font-display);
+    font-size: 8rem;
+    transition: transform var(--duration-slow) var(--ease-out);
+  }
+  .build-card:hover .build-art span {
+    transform: rotate(-8deg) scale(1.1);
+  }
+  .build-art small {
+    max-width: 20ch;
+    align-self: end;
     font-family: var(--font-mono);
     font-size: var(--fs-xs);
-    color: var(--color-accent);
-    padding: var(--space-1) 0;
-    user-select: none;
-    list-style: none;
-    display: inline-block;
+    text-align: right;
   }
-  .launches-more summary::-webkit-details-marker {
-    display: none;
+  .tone-coral .build-art { background: var(--color-bg-hover); }
+  .tone-blue .build-art { background: var(--color-blue-soft); }
+  .tone-gold .build-art { background: var(--color-gold-soft); }
+  .tone-green .build-art { background: var(--color-green-soft); }
+  .build-copy {
+    padding: var(--space-6);
   }
-  .launches-more summary::before {
-    content: '+ ';
-    display: inline-block;
-    min-width: 1.5ch;
+  .role {
+    color: #8fa099;
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
   }
-  .launches-more[open] summary::before {
-    content: '- ';
+  .build-copy h3 {
+    margin-block: var(--space-2) var(--space-3);
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
   }
-  .launches-more summary:hover {
-    color: var(--color-accent-bright, var(--color-accent));
+  .build-copy > p:not(.role) {
+    color: #b8c4be;
   }
-  .launches-more ul {
-    margin-top: var(--space-2);
+  .build-copy .stack li {
+    background: rgba(255, 255, 255, 0.08);
+    color: #c7d0cb;
   }
   .links {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--space-4);
+    margin-top: var(--space-5);
     font-family: var(--font-mono);
     font-size: var(--fs-sm);
-    margin-top: var(--space-2);
+  }
+  .links a {
+    color: #8cc9b6;
+  }
+  @media (max-width: 800px) {
+    .hero-grid,
+    .case-grid,
+    .case-wide,
+    .launch-evidence,
+    .build-grid {
+      grid-template-columns: 1fr;
+    }
+    .section-intro {
+      align-items: start;
+      flex-direction: column;
+    }
+    .case-wide {
+      display: flex;
+    }
+    .case-mark {
+      display: none;
+    }
+    .launch-heading {
+      position: static;
+    }
+  }
+  @media (max-width: 520px) {
+    .page-hero h1 {
+      font-size: 3.4rem;
+    }
+    .build-art {
+      min-height: 210px;
+    }
+    .launch-evidence a,
+    .launch-evidence li > div {
+      flex-direction: column;
+      gap: var(--space-1);
+    }
   }
 </style>

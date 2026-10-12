@@ -25,6 +25,7 @@ const projects = defineCollection({
     stack: z.array(z.string()).default([]),
     link: z.string().url().optional(),
     repo: z.string().url().optional(),
+    image: z.string().optional(),
     press: z
       .array(z.object({ label: z.string(), url: z.string().url() }))
       .default([]),

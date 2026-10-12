@@ -5,8 +5,9 @@ year: 2022
 role: 'Team of 5 · Backend + Computer Vision'
 stack: ['Django', 'Python', 'OpenCV', 'SciPy', 'imutils', 'React Native']
 repo: 'https://github.com/aminuabdusalam/TravelBuddy'
+image: '/projects/travel-buddy.png'
 featured: true
-order: 6
+order: 4
 type: personal
 ---
 

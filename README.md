@@ -1,43 +1,15 @@
-# Astro Starter Kit: Minimal
+# Aminu Abdusalam
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Source for [aminuabdusalam.github.io](https://aminuabdusalam.github.io), my personal portfolio and writing site.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The site brings together selected product, engineering, data, and applied AI work alongside side projects, writing, and the experiences that shaped how I build.
 
-## 🚀 Project Structure
+## What you'll find
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Work:** Selected professional work and independently built projects
+- **Writing:** Notes on building, product thinking, engineering, and career exploration
+- **About:** The personal path, interests, and operating principles behind the work
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## The site
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Built with Astro and shaped as a field notebook: direct, evidence-led, and designed to make both the work and the person behind it easy to explore.
