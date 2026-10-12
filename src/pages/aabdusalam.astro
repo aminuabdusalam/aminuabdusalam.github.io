@@ -51,6 +51,18 @@ const canonicalUrl = new URL('/aabdusalam', Astro.site ?? 'https://aminuabdusala
       </div>
     </main>
 
+    <noscript>
+      <style>
+        #rickroll-prompt {
+          display: none;
+        }
+
+        #oof-plan[hidden] {
+          display: block;
+        }
+      </style>
+    </noscript>
+
     <script is:inline>
       const returnKey = 'aabdusalam-rickroll-returned';
       const prompt = document.querySelector('#rickroll-prompt');
@@ -87,6 +99,7 @@ const canonicalUrl = new URL('/aabdusalam', Astro.site ?? 'https://aminuabdusala
         returnUrl.search = '';
         returnUrl.searchParams.set('returned', '1');
         window.history.replaceState({ returned: true }, '', returnUrl);
+        showCurrentState();
       });
 
       showCurrentState();
