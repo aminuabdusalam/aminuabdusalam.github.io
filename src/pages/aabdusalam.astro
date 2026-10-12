@@ -1,59 +1,92 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/global.css';
 
 const planUrl =
   'https://microsoft-my.sharepoint.com/:w:/p/aabdusalam/cQoJLXI_0_NIRb_JWfT16EoPEgUCPfjOiUModqkujnKd_ZMWmQ';
+const canonicalUrl = new URL('/aabdusalam', Astro.site ?? 'https://aminuabdusalam.github.io');
 ---
 
-<BaseLayout
-  title="Aminu's OOF buddy plan"
-  description="The link you were probably looking for."
-  noindex
->
-  <section id="oof-plan" class="landing" hidden>
-    <div class="plan-card">
-      <p class="eyebrow">Okay, fine.</p>
-      <h1>Just had to do that.</h1>
-      <p class="intro">
-        You're probably looking for my OOF buddy plan. Here you go.
-      </p>
-      <a class="plan-link" href={planUrl} target="_blank" rel="noreferrer">
-        Open the OOF buddy plan
-      </a>
-      <p class="access-note">Microsoft sign-in required.</p>
-    </div>
-  </section>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="The link you were probably looking for." />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Aminu's OOF buddy plan</title>
+  </head>
+  <body>
+    <main id="oof-plan" class="landing" hidden>
+      <div class="plan-card">
+        <p class="eyebrow">Okay, fine.</p>
+        <h1>Just had to do that.</h1>
+        <p class="intro">
+          You're probably looking for my OOF buddy plan. Here you go.
+        </p>
+        <a class="plan-link" href={planUrl} target="_blank" rel="noreferrer">
+          Open the OOF buddy plan
+        </a>
+        <p class="access-note">Microsoft sign-in required.</p>
+      </div>
+    </main>
 
-  <noscript>
-    <style>
-      #oof-plan[hidden] {
-        display: grid;
-      }
-    </style>
-  </noscript>
+    <noscript>
+      <style>
+        #oof-plan[hidden] {
+          display: grid;
+        }
+      </style>
+    </noscript>
 
-  <script is:inline>
-    const returnKey = 'aabdusalam-rickroll-returned';
-    const landing = document.querySelector('#oof-plan');
-    const preview = new URLSearchParams(window.location.search).has('preview');
+    <script is:inline>
+      const returnKey = 'aabdusalam-rickroll-returned';
+      const landing = document.querySelector('#oof-plan');
+      const preview = new URLSearchParams(window.location.search).has('preview');
 
-    const revealPlan = () => landing?.removeAttribute('hidden');
+      const revealPlan = () => landing?.removeAttribute('hidden');
+      const hasReturned = () => {
+        try {
+          return sessionStorage.getItem(returnKey) === 'true';
+        } catch (error) {
+          console.warn('Session storage is unavailable; revealing the plan.', error);
+          revealPlan();
+          return true;
+        }
+      };
+      const markReturned = () => {
+        try {
+          sessionStorage.setItem(returnKey, 'true');
+          return true;
+        } catch (error) {
+          console.warn('Session storage is unavailable; revealing the plan.', error);
+          revealPlan();
+          return false;
+        }
+      };
 
-    if (preview || sessionStorage.getItem(returnKey)) {
-      revealPlan();
-    } else {
-      sessionStorage.setItem(returnKey, 'true');
-      window.history.pushState({ returnToPlan: true }, '', window.location.href);
-      window.location.assign('https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1');
-    }
-
-    window.addEventListener('pageshow', () => {
-      if (sessionStorage.getItem(returnKey)) {
+      if (preview || hasReturned()) {
         revealPlan();
+      } else if (markReturned()) {
+        window.history.pushState({ returnToPlan: true }, '', window.location.href);
+        window.location.assign('https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1');
       }
-    });
-  </script>
-</BaseLayout>
+
+      window.addEventListener('pageshow', () => {
+        if (hasReturned()) {
+          revealPlan();
+        }
+      });
+    </script>
+  </body>
+</html>
 
 <style>
   .landing {
