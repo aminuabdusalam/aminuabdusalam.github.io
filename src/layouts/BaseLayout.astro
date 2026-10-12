@@ -7,12 +7,14 @@ interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  noindex?: boolean;
 }
 
 const {
   title = 'Aminu Abdusalam',
   description = 'Building at the intersection of product, engineering, and data, from ambiguous problem to working system.',
   ogImage = '/og-default.png',
+  noindex = false,
 } = Astro.props;
 
 const siteUrl = Astro.site?.toString() ?? 'https://aminuabdusalam.github.io';
@@ -30,6 +32,7 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
