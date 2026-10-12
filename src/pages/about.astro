@@ -230,6 +230,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: clamp(2.8rem, 6vw, 5rem);
     line-height: 0.98;
   }
+  .operating .eyebrow {
+    color: var(--color-green-soft);
+  }
+  .operating .eyebrow::before {
+    background: var(--color-green-soft);
+  }
   .operating-copy > p:not(.eyebrow) {
     margin-bottom: var(--space-4);
     color: #b8c4be;

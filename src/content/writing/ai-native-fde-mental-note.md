@@ -1,7 +1,7 @@
 ---
 title: 'Mental note: AI-native Forward Deployed Engineer'
 description: 'A career question to return to.'
-pubDate: 2026-10-13
+pubDate: 2026-10-12T12:00:00-07:00
 tags: ['career', 'ai', 'fde']
 ---
 
