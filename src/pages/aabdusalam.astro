@@ -24,8 +24,21 @@ const canonicalUrl = new URL('/aabdusalam', Astro.site ?? 'https://aminuabdusala
     <title>Aminu's OOF buddy plan</title>
   </head>
   <body>
-    <main id="oof-plan" class="landing" hidden>
-      <div class="plan-card">
+    <main class="landing">
+      <div id="rickroll-prompt" class="plan-card">
+        <p class="eyebrow">OOF buddy plan</p>
+        <h1>Right this way.</h1>
+        <p class="intro">Everything you need is one click away.</p>
+        <a
+          id="rickroll-link"
+          class="plan-link"
+          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1"
+        >
+          Open the plan
+        </a>
+      </div>
+
+      <div id="oof-plan" class="plan-card" hidden>
         <p class="eyebrow">Okay, fine.</p>
         <h1>Just had to do that.</h1>
         <p class="intro">
@@ -40,50 +53,57 @@ const canonicalUrl = new URL('/aabdusalam', Astro.site ?? 'https://aminuabdusala
 
     <noscript>
       <style>
+        #rickroll-prompt {
+          display: none;
+        }
+
         #oof-plan[hidden] {
-          display: grid;
+          display: block;
         }
       </style>
     </noscript>
 
     <script is:inline>
       const returnKey = 'aabdusalam-rickroll-returned';
-      const landing = document.querySelector('#oof-plan');
-      const preview = new URLSearchParams(window.location.search).has('preview');
+      const prompt = document.querySelector('#rickroll-prompt');
+      const plan = document.querySelector('#oof-plan');
+      const rickrollLink = document.querySelector('#rickroll-link');
 
-      const revealPlan = () => landing?.removeAttribute('hidden');
       const hasReturned = () => {
         try {
           return sessionStorage.getItem(returnKey) === 'true';
         } catch (error) {
-          console.warn('Session storage is unavailable; revealing the plan.', error);
-          revealPlan();
-          return true;
+          console.warn('Session storage is unavailable.', error);
+          return false;
         }
       };
       const markReturned = () => {
         try {
           sessionStorage.setItem(returnKey, 'true');
-          return true;
         } catch (error) {
-          console.warn('Session storage is unavailable; revealing the plan.', error);
-          revealPlan();
-          return false;
+          console.warn('Session storage is unavailable.', error);
         }
       };
+      const showCurrentState = () => {
+        const params = new URLSearchParams(window.location.search);
+        const returned =
+          params.has('preview') || params.has('returned') || hasReturned();
 
-      if (preview || hasReturned()) {
-        revealPlan();
-      } else if (markReturned()) {
-        window.history.pushState({ returnToPlan: true }, '', window.location.href);
-        window.location.assign('https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1');
-      }
+        if (prompt) prompt.hidden = returned;
+        if (plan) plan.hidden = !returned;
+      };
 
-      window.addEventListener('pageshow', () => {
-        if (hasReturned()) {
-          revealPlan();
-        }
+      rickrollLink?.addEventListener('click', () => {
+        markReturned();
+        const returnUrl = new URL(window.location.href);
+        returnUrl.search = '';
+        returnUrl.searchParams.set('returned', '1');
+        window.history.replaceState({ returned: true }, '', returnUrl);
+        showCurrentState();
       });
+
+      showCurrentState();
+      window.addEventListener('pageshow', showCurrentState);
     </script>
   </body>
 </html>
