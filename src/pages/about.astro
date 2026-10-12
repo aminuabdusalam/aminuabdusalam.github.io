@@ -2,196 +2,408 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="About — Aminu Abdusalam" description="A bit about me.">
-  <section class="container container-narrow prose">
-    <h1>About</h1>
-    <p class="lead">
-      I'm a Product Manager 2 at Microsoft on Consumer Commerce, an engineer who
-      writes production code, and a builder who can't stop tinkering.
-    </p>
+<BaseLayout
+  title="About — Aminu Abdusalam"
+  description="The longer story: Nigeria, Fisk, Microsoft, product, engineering, data, and the interests outside the job title."
+>
+  <section class="about-hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">The longer story</p>
+        <h1>I have always felt most energized in the middle.</h1>
+      </div>
+      <div class="hero-note">
+        <p>
+          Between product and engineering. Between data and decisions. Between the system as
+          designed and what customers actually experience.
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <p>
-      I grew up in Nigeria and moved to the U.S. for college at <strong>Fisk University</strong>
-      in Nashville, where I studied Computer Science on the W.E.B. Du Bois Honors track,
-      graduated as <strong>valedictorian</strong> with a 4.0, and helped Fisk win the <a
-      href="https://www.fisk.edu/university-news-and-publications/fisk-universitys-team-wins-the-highly-coveted-2022-hbcu-battle-of-the-brains/"
-      target="_blank" rel="noopener">NFL Battle of the Brains</a> championship.
-    </p>
+  <section class="operating">
+    <div class="container operating-grid">
+      <div class="portrait-card" aria-label="A typographic portrait of Aminu">
+        <span class="portrait-mark">A</span>
+        <div>
+          <strong>Ota → Nashville → Redmond</strong>
+          <small>Still learning. Still building.</small>
+        </div>
+      </div>
+      <div class="operating-copy">
+        <p class="eyebrow">How I operate</p>
+        <h2>Product manager by title. Product engineer in practice.</h2>
+        <p>
+          I am a Product Manager 2 at Microsoft on Consumer Commerce, an engineer who writes
+          production code, and a builder who cannot stop tinkering. I am energized by ambiguous,
+          high-stakes problems where product judgment and hands-on engineering can turn one-off
+          pain into reusable tools, integrations, and platform capabilities.
+        </p>
+        <p>
+          At Microsoft, that has meant shipping commerce experiences, developing data scripts
+          when automated systems failed, building MCP-based Copilot CLI plugins, and contributing
+          code to the tools and pipelines behind customer support and subscription launches.
+        </p>
+        <div class="skill-cloud" aria-label="Technical skills">
+          <span>Python</span><span>TypeScript</span><span>C#</span><span>KQL</span>
+          <span>MCP</span><span>Tool calling</span><span>Angular</span><span>.NET</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <p>
-      I started at Microsoft as a Program Manager intern on Xbox Game Pass while still in
-      school. After graduating in 2023, I joined full-time on Consumer Commerce and have
-      been shipping commerce experiences ever since. That list includes the introduction of
-      Xbox Game Pass Standard (now Premium), Fortnite Crew inside Xbox Game Pass Ultimate,
-      Ask-a-Parent for kids requesting subscriptions, Xbox mobile app store capabilities,
-      the Recurring Discounts capability, and region-based fraud remediation. Three
-      promotions in under three years (L59 → L62), which mostly means I've learned to ship things
-      and write clearly.
-    </p>
+  <section class="journey">
+    <div class="container">
+      <p class="eyebrow">The path here</p>
+      <h2 class="section-heading">A few chapters, so far.</h2>
+      <ol class="timeline">
+        <li>
+          <span class="year">Now</span>
+          <div class="chapter">
+            <p>Microsoft · Consumer Commerce</p>
+            <h3>Product Manager 2</h3>
+            <p>Broader ownership across subscription, purchase, fraud, and applied AI work. Three promotions in under three years.</p>
+          </div>
+          <span class="chapter-number">04</span>
+        </li>
+        <li>
+          <span class="year">2023</span>
+          <div class="chapter">
+            <p>Microsoft · Consumer Commerce</p>
+            <h3>Product Manager</h3>
+            <p>Joined full-time after interning and began shipping customer-facing commerce experiences at global scale.</p>
+          </div>
+          <span class="chapter-number">03</span>
+        </li>
+        <li>
+          <span class="year">2023</span>
+          <div class="chapter">
+            <p>Fisk University · Nashville</p>
+            <h3>Valedictorian, B.S. Computer Science</h3>
+            <p>4.0 GPA, W.E.B. Du Bois Honors, CS Club president, teaching assistant, and an honors thesis on extended reality in mental-health therapy.</p>
+          </div>
+          <span class="chapter-number">02</span>
+        </li>
+        <li>
+          <span class="year">Nigeria</span>
+          <div class="chapter">
+            <p>The first chapter</p>
+            <h3>Curiosity before credentials</h3>
+            <p>Growing up across cultures taught me to translate between perspectives long before I learned to translate between product and engineering.</p>
+          </div>
+          <span class="chapter-number">01</span>
+        </li>
+      </ol>
+    </div>
+  </section>
 
-    <h2>Timeline</h2>
-    <ul class="timeline">
-      <li>
-        <span class="year">2025</span>
+  <section class="proud">
+    <div class="container">
+      <div class="section-intro">
         <div>
-          <strong>Product Manager 2, Microsoft</strong>
-          <p>Consumer Commerce. Broader ownership across subscription, purchase, and fraud surfaces. Also building internal Copilot CLI plugins for the org.</p>
+          <p class="eyebrow">A few things I am proud of</p>
+          <h2 class="section-heading">Wins are better with context.</h2>
         </div>
-      </li>
-      <li>
-        <span class="year">2023</span>
-        <div>
-          <strong>Product Manager, Microsoft</strong>
-          <p>Joined Consumer Commerce full-time (June 2023 to Feb 2025). First shipped experiences for hundreds of millions of Xbox players.</p>
-        </div>
-      </li>
-      <li>
-        <span class="year">2023</span>
-        <div>
-          <strong>B.S. Computer Science, Fisk University</strong>
-          <p>Honors track (W.E.B. Du Bois). 4.0 GPA. NFL Battle of the Brains champion. Nashville, TN.</p>
-        </div>
-      </li>
-      <li>
-        <span class="year">2022</span>
-        <div>
-          <strong>Program Manager Intern, Microsoft</strong>
-          <p>Interned on Xbox Game Pass. Shipped a feature for the business to modify existing products and measure business performance.</p>
-        </div>
-      </li>
-      <li>
-        <span class="year">2021</span>
-        <div>
-          <strong>SWE + PM Intern, Microsoft</strong>
-          <p>Built anomaly detection models on top of Kusto and Geneva to catch subscription-metric regressions before they hit customers.</p>
-        </div>
-      </li>
-      <li>
-        <span class="year">2020</span>
-        <div>
-          <strong>IT Intern, Froedtert Health</strong>
-          <p>Managed multi-site IT for 20,000+ endpoints across 20 locations. Learned how enterprise IT actually holds together.</p>
-        </div>
-      </li>
-    </ul>
+        <p class="section-copy">The goal is not a trophy wall. These are moments that shaped how I work.</p>
+      </div>
+      <div class="proud-grid">
+        <article class="proud-card card-fisk">
+          <span>01</span>
+          <h3>Valedictorian at Fisk</h3>
+          <p>Class of 2023, 4.0 GPA, and the W.E.B. Du Bois Honors track.</p>
+          <a href="https://www.fisk.edu/about/administration/division-of-academic-affairs/academic-achievement/" target="_blank" rel="noopener">Fisk record ↗</a>
+        </article>
+        <article class="proud-card card-nfl">
+          <span>02</span>
+          <h3>NFL Battle of the Brains champion</h3>
+          <p>Led Fisk's team through a national HBCU case competition focused on Gen Z fan engagement.</p>
+          <a href="https://www.fisk.edu/university-news-and-publications/fisk-universitys-team-wins-the-highly-coveted-2022-hbcu-battle-of-the-brains/" target="_blank" rel="noopener">Read the story ↗</a>
+        </article>
+        <article class="proud-card card-maki">
+          <span>03</span>
+          <h3>Lilly HBCU Hackathon winner</h3>
+          <p>Built MAKI, an NLP assistant for classifying safety narratives in patient case notes.</p>
+          <a href="https://devpost.com/software/project-name-170gfn" target="_blank" rel="noopener">See the project ↗</a>
+        </article>
+        <article class="proud-card card-thesis">
+          <span>04</span>
+          <h3>Published honors thesis</h3>
+          <p>Explored the role of extended reality in the future of mental-health therapy.</p>
+          <a href="https://doi.org/10.5281/zenodo.22669588" target="_blank" rel="noopener">Read the thesis ↗</a>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    <h2>Honors, wins, and things I'm proud of</h2>
-    <ul>
-      <li><strong>3 promotions in under 3 years at Microsoft</strong> — moved from PM 1 to PM 2 faster than the standard clock.</li>
-      <li><strong>Valedictorian, Fisk University</strong> — Class of 2023. 4.0 GPA, W.E.B. Du Bois Honors track. (<a href="https://www.fisk.edu/about/administration/division-of-academic-affairs/academic-achievement/" target="_blank" rel="noopener">Spring 2023 President's List</a>; <a href="https://www.youtube.com/watch?v=NcVxVbDvweM&t=3270s" target="_blank" rel="noopener">2023 Commencement (54:30 to 1:02:04)</a>.)</li>
-      <li><strong>Graduated with Honors - W.E.B. Du Bois Honors Program</strong> - Fisk's selective honors program for students who demonstrate academic capability and foster excellence in scholarship. (<a href="https://fisk.libguides.com/c.php?g=1027096" target="_blank" rel="noopener">Program overview</a>.) Honors thesis: "The Role of Extended Reality in the Future of Mental-Health Therapy" (2023, Advisor: Dr. Magana Kabugi). Permanent DOI: <a href="https://doi.org/10.5281/zenodo.22669588" target="_blank" rel="noopener">10.5281/zenodo.22669588</a>.</li>
-      <li>
-        <strong>NFL Battle of the Brains</strong> — Champion (Fisk team). $85K prize + NFL Draft experience.
-        Press:
-        <a href="https://www.fisk.edu/university-news-and-publications/fisk-universitys-team-wins-the-highly-coveted-2022-hbcu-battle-of-the-brains/" target="_blank" rel="noopener">Fisk</a>,
-        <a href="https://rollingout.com/2022/03/18/black-intelligence-celebrated-as-nfl-hosts-5th-annual-hbcu-battle-of-the-brains/" target="_blank" rel="noopener">Rolling Out</a>,
-        <a href="https://www.blackenterprise.com/fisk-university-wins-prize-at-hbcu-battle-of-the-brains-presented-by-nfl/" target="_blank" rel="noopener">Black Enterprise</a>,
-        <a href="https://hbcubattleofthebrains.com/history/" target="_blank" rel="noopener">HBCU BOTB history</a>.
-      </li>
-      <li><strong>Erastus Milo Cravath Presidential Scholarship</strong> — Full-ride to Fisk ($128K).</li>
-      <li><strong>Dell Success Scholarship winner</strong>. (Named in <a href="https://rollingout.com/2022/03/18/black-intelligence-celebrated-as-nfl-hosts-5th-annual-hbcu-battle-of-the-brains/" target="_blank" rel="noopener">Rolling Out coverage</a> of the 2022 HBCU Battle of the Brains.)</li>
-      <li><strong>Lilly HBCU Hackathon - Winner (Team MAKI)</strong> - Eli Lilly's national HBCU hackathon (March-April 2023, $30K prize pool). We built <a href="https://devpost.com/software/project-name-170gfn" target="_blank" rel="noopener">MAKI</a>, an AI-powered NLP tool that classifies safety narratives in patient case notes using GPT + spaCy's biomedical model. Judged by Lilly leadership. (<a href="https://lillyhbcuhack.devpost.com/" target="_blank" rel="noopener">Official hackathon page</a>.)</li>
-      <li><strong>Oracle NetSuite Case Competition</strong> — 1st place.</li>
-      <li><strong>Microsoft PM HBCU Hack</strong> — 3rd place.</li>
-      <li><strong>BE-Smart Hack</strong> — HP & Nvidia Awards.</li>
-      <li><strong>Summit Partners Case Competition</strong> — 3rd place.</li>
-      <li><strong>McKinsey Diversity Leadership Scholar</strong>.</li>
-    </ul>
+  <section class="outside">
+    <div class="container outside-grid">
+      <div>
+        <p class="eyebrow">Outside the work</p>
+        <h2 class="section-heading">The person doing the building matters too.</h2>
+      </div>
+      <div class="interest-list">
+        <div><span>01</span><p>Spending time with people I care about</p></div>
+        <div><span>02</span><p>Soccer, bouldering, pickleball, and paddleboarding</p></div>
+        <div><span>03</span><p>Mentoring students breaking into tech</p></div>
+        <div><span>04</span><p>Writing about product, engineering, identity, and life</p></div>
+        <div><span>05</span><p>Building tools for problems I cannot stop thinking about</p></div>
+      </div>
+    </div>
+  </section>
 
-    <h2>What I'm into</h2>
-    <ul>
-      <li>Subscription and marketplace commerce (payments, entitlements, tax, fraud)</li>
-      <li>AI agents that actually change how PMs work day-to-day</li>
-      <li>Spending time with people I care about</li>
-      <li>Soccer, bouldering, pickleball, paddleboarding</li>
-      <li>Mentoring students breaking into tech — I was the CS Club President and a TA at Fisk, and I still find time for it</li>
-      <li>Writing about the messy in-between of product and engineering</li>
-    </ul>
-
-    <p class="cta-line">
-      <a href="mailto:aminuabdusalam2019@gmail.com">Say hi →</a>
-    </p>
+  <section class="contact-strip">
+    <div class="container contact-inner">
+      <h2>Want to compare notes?</h2>
+      <div>
+        <a class="pill-link" href="mailto:aminu0abdusalam@gmail.com">Email me</a>
+        <a class="pill-link" href="https://www.linkedin.com/in/aminuabdusalam/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
   </section>
 </BaseLayout>
 
 <style>
-  .prose {
-    padding-block: var(--space-10) var(--space-8);
+  .about-hero {
+    padding-block: var(--space-12);
   }
-  .prose h1 {
-    font-size: var(--fs-3xl);
-    margin-bottom: var(--space-5);
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: var(--space-10);
+    align-items: end;
   }
-  .prose h2 {
-    margin-top: var(--space-8);
-    margin-bottom: var(--space-4);
-    font-size: var(--fs-xl);
-    color: var(--color-accent);
+  .about-hero h1 {
+    max-width: 11ch;
+    margin-top: var(--space-4);
+    font-size: clamp(3.6rem, 9vw, 8rem);
+    line-height: 0.92;
+  }
+  .hero-note {
+    padding: var(--space-6);
+    border-left: 3px solid var(--color-accent);
+    color: var(--color-text-muted);
+    font-size: var(--fs-md);
+  }
+  .operating {
+    background: var(--color-ink);
+    color: white;
+  }
+  .operating-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: var(--space-10);
+    align-items: center;
+  }
+  .portrait-card {
+    min-height: 540px;
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: var(--radius-lg);
+    color: var(--color-ink);
+    border: 1px solid var(--color-text-strong);
+    background:
+      linear-gradient(90deg, transparent 49.8%, rgba(16, 19, 17, 0.14) 50%, transparent 50.2%),
+      linear-gradient(transparent 49.8%, rgba(16, 19, 17, 0.14) 50%, transparent 50.2%),
+      var(--color-green-soft);
+    background-size: 48px 48px;
+    box-shadow: 8px 8px 0 var(--color-border-strong);
+  }
+  .portrait-mark {
+    font-family: var(--font-display);
+    font-size: 15rem;
+    line-height: 0.8;
+  }
+  .portrait-card div {
+    display: flex;
+    flex-direction: column;
+  }
+  .portrait-card small {
+    margin-top: var(--space-1);
     font-family: var(--font-mono);
   }
-  .prose h2::before {
-    content: '## ';
-    color: var(--color-text-dim);
+  .operating-copy h2 {
+    max-width: 14ch;
+    margin-block: var(--space-3) var(--space-5);
+    color: white;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 0.98;
   }
-  .prose p {
+  .operating-copy > p:not(.eyebrow) {
     margin-bottom: var(--space-4);
-    color: var(--color-text);
-  }
-  .prose .lead {
+    color: #b8c4be;
     font-size: var(--fs-md);
-    color: var(--color-text-strong);
   }
-  .prose ul {
-    margin-bottom: var(--space-5);
-    padding-left: var(--space-5);
-    color: var(--color-text);
+  .skill-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-5);
   }
-  .prose li {
-    margin-bottom: var(--space-2);
-    line-height: var(--lh-relaxed);
+  .skill-cloud span {
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: var(--radius-full);
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: #c7d0cb;
   }
   .timeline {
     list-style: none;
-    padding: 0;
-    border-left: 1px solid var(--color-border-strong);
-    margin-left: var(--space-2);
+    margin-top: var(--space-8);
+    border-top: 1px solid var(--color-border-strong);
   }
   .timeline li {
-    display: flex;
-    gap: var(--space-5);
-    padding: var(--space-4) 0 var(--space-4) var(--space-5);
-    position: relative;
+    display: grid;
+    grid-template-columns: 8rem 1fr auto;
+    gap: var(--space-6);
+    padding-block: var(--space-6);
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
   }
-  .timeline li::before {
-    content: '';
-    position: absolute;
-    left: -5px;
-    top: var(--space-6);
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: var(--color-accent);
-    box-shadow: 0 0 12px var(--color-accent-glow);
-  }
-  .year {
+  .year,
+  .chapter > p:first-child,
+  .chapter-number {
     font-family: var(--font-mono);
-    font-size: var(--fs-sm);
+    font-size: var(--fs-xs);
     color: var(--color-text-dim);
-    min-width: 60px;
-    padding-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
   }
-  .timeline strong {
-    color: var(--color-text-strong);
-    display: block;
-    margin-bottom: var(--space-1);
+  .chapter h3 {
+    margin-block: var(--space-1) var(--space-2);
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    font-weight: 400;
   }
-  .timeline p {
-    font-size: var(--fs-sm);
+  .chapter > p:last-child {
+    max-width: 65ch;
     color: var(--color-text-muted);
-    margin: 0;
   }
-  .cta-line {
+  .chapter-number {
+    font-size: var(--fs-3xl);
+    color: var(--color-border-strong);
+  }
+  .section-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: var(--space-8);
+  }
+  .proud-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
     margin-top: var(--space-8);
+  }
+  .proud-card {
+    min-height: 330px;
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-lg);
+    color: var(--color-text-strong);
+  }
+  .proud-card > span {
     font-family: var(--font-mono);
+    opacity: 0.55;
+  }
+  .proud-card h3 {
+    max-width: 12ch;
+    margin-top: auto;
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    font-weight: 400;
+  }
+  .proud-card p {
+    margin-block: var(--space-3);
+    color: rgba(20, 33, 29, 0.72);
+  }
+  .proud-card a {
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+  }
+  .card-fisk { background: var(--color-gold-soft); }
+  .card-nfl { background: var(--color-blue-soft); }
+  .card-maki { background: var(--color-bg-hover); }
+  .card-thesis { background: var(--color-green-soft); }
+  .outside {
+    padding-bottom: var(--space-8);
+  }
+  .outside-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: var(--space-10);
+  }
+  .interest-list {
+    border-top: 1px solid var(--color-border-strong);
+  }
+  .interest-list div {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: var(--space-4);
+    padding-block: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .interest-list span {
+    font-family: var(--font-mono);
+    color: var(--color-text-dim);
+    font-size: var(--fs-xs);
+  }
+  .interest-list p {
+    font-size: var(--fs-md);
+  }
+  .contact-strip {
+    padding-top: var(--space-5);
+  }
+  .contact-inner {
+    padding: var(--space-8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-5);
+    border-radius: var(--radius-lg);
+    background: var(--color-green-soft);
+  }
+  .contact-inner h2 {
+    font-size: var(--fs-3xl);
+  }
+  .contact-inner > div {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+  }
+  @media (max-width: 800px) {
+    .hero-grid,
+    .operating-grid,
+    .outside-grid {
+      grid-template-columns: 1fr;
+    }
+    .section-intro {
+      align-items: start;
+      flex-direction: column;
+    }
+    .portrait-card {
+      min-height: 420px;
+    }
+  }
+  @media (max-width: 600px) {
+    .about-hero h1 {
+      font-size: 4rem;
+    }
+    .timeline li {
+      grid-template-columns: 4rem 1fr;
+    }
+    .chapter-number {
+      display: none;
+    }
+    .proud-grid {
+      grid-template-columns: 1fr;
+    }
+    .contact-inner {
+      align-items: start;
+      flex-direction: column;
+    }
   }
 </style>

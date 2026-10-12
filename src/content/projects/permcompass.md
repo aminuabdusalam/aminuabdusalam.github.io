@@ -6,7 +6,7 @@ role: 'Solo · Design + Build'
 stack: ['Vanilla JS', 'PWA', 'Service Worker', 'localStorage']
 link: 'https://aminuabdusalam.github.io/PermCompass/'
 repo: 'https://github.com/aminuabdusalam/PermCompass'
-featured: true
+featured: false
 order: 5
 type: personal
 ---

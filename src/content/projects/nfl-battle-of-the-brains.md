@@ -5,11 +5,12 @@ year: 2022
 role: 'Team lead'
 stack: ['Product', 'Research', 'Presenting']
 link: 'https://www.fisk.edu/university-news-and-publications/fisk-universitys-team-wins-the-highly-coveted-2022-hbcu-battle-of-the-brains/'
+image: '/projects/battle-of-the-brains.jpg'
 press:
   - label: 'Press feature'
     url: 'https://rollingout.com/2022/03/18/black-intelligence-celebrated-as-nfl-hosts-5th-annual-hbcu-battle-of-the-brains/'
 featured: true
-order: 7
+order: 5
 type: personal
 ---
 

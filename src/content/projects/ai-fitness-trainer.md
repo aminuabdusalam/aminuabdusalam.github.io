@@ -5,6 +5,7 @@ year: 2022
 role: 'Solo build'
 stack: ['Python', 'Mediapipe', 'OpenCV', 'NumPy', 'React', 'Django']
 repo: 'https://github.com/aminuabdusalam/AI-FitnessTrainer'
+image: '/projects/ai-fitness-trainer.jpg'
 featured: true
 order: 2
 type: personal

@@ -4,14 +4,14 @@ const year = new Date().getFullYear();
 const socials = [
   { href: 'https://github.com/aminuabdusalam', label: 'GitHub' },
   { href: 'https://www.linkedin.com/in/aminuabdusalam/', label: 'LinkedIn' },
-  { href: 'mailto:aminuabdusalam2019@gmail.com', label: 'Email' },
+  { href: 'mailto:aminu0abdusalam@gmail.com', label: 'Email' },
 ];
 ---
 
 <footer class="footer">
   <div class="footer-inner">
     <p class="tagline">
-      Built with <a href="https://astro.build" rel="noopener">Astro</a>. Hosted on GitHub Pages.
+      Built with curiosity, <a href="https://astro.build" rel="noopener">Astro</a>, and an unreasonable number of browser tabs.
     </p>
     <ul class="socials">
       {socials.map((s) => (
@@ -32,6 +32,7 @@ const socials = [
     margin-top: var(--space-12);
     padding-block: var(--space-8);
     color: var(--color-text-muted);
+    background: var(--color-ink);
     font-size: var(--fs-sm);
   }
 
@@ -54,7 +55,7 @@ const socials = [
   }
 
   .socials a {
-    color: var(--color-text-muted);
+    color: #c7d0cb;
     transition: color var(--duration-fast) var(--ease-out);
   }
 
@@ -65,11 +66,12 @@ const socials = [
   .tagline {
     font-family: var(--font-mono);
     font-size: var(--fs-xs);
+    color: #c7d0cb;
   }
 
   .copyright {
     font-family: var(--font-mono);
     font-size: var(--fs-xs);
-    color: var(--color-text-dim);
+    color: #87938d;
   }
 </style>
