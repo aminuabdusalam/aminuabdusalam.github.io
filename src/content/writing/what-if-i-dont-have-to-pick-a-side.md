@@ -1,8 +1,7 @@
 ---
 title: 'What if I don''t have to pick a side?'
 description: 'On product, engineering, titles, and the kind of work I want to keep doing.'
-pubDate: 2026-10-12T12:00:00-07:00
-updatedDate: 2026-10-17T21:48:00-07:00
+pubDate: 2026-10-17T12:00:00-07:00
 tags: ['career', 'ai', 'fde']
 ---
 
