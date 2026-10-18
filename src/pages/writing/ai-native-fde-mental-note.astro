@@ -1,0 +1,25 @@
+---
+const destination = '/writing/what-if-i-dont-have-to-pick-a-side';
+const canonicalUrl = new URL(destination, Astro.site ?? 'https://aminuabdusalam.github.io');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0; url=${destination}`} />
+    <link rel="canonical" href={canonicalUrl} />
+    <title>Redirecting...</title>
+    <script is:inline define:vars={{ destination }}>
+      window.location.replace(destination);
+    </script>
+  </head>
+  <body>
+    <p>
+      This essay moved to
+      <a href={destination}>What if I don't have to pick a side?</a>
+    </p>
+  </body>
+</html>
